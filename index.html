@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine - Gurneet</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.app{
+    width:360px;
+    height:640px;
+    background:white;
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    overflow:hidden;
+    position:relative;
+}
+
+.header{
+    background:#ff4d6d;
+    color:white;
+    padding:15px;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.content{
+    padding:15px;
+    text-align:center;
+    overflow-y:auto;
+    height:520px;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#ff4d6d;
+}
+
+.typing{
+    font-size:20px;
+    font-weight:bold;
+    color:#e6005c;
+    height:30px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:14px;
+    color:#444;
+    line-height:1.5;
+}
+
+.buttons{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+button{
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.yes{
+    background:#ff4d6d;
+    color:white;
+}
+
+.no{
+    background:#ccc;
+}
+
+.yes:hover{
+    transform:scale(1.1);
+}
+
+.popup{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.popup h3{
+    color:#ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="header">
+    My Valentine 💖
+</div>
+
+<div class="content">
+
+<div class="typing" id="typing"></div>
+
+<h2>Happy Valentine’s Day Gulaboo 🌹</h2>
+
+<img src="WhatsApp Image 2026-02-14 at 1.38.20 PM.jpeg">
+<img src="WhatsApp Image 2026-02-14 at 1.38.20 PM (1).jpeg">
+<img src="WhatsApp Image 2026-02-14 at 1.38.20 PM (4).jpeg">
+<img src="WhatsApp Image 2026-02-14 at 1.38.20 PM (3).jpeg">
+<img src="WhatsApp Image 2026-02-14 at 1.38.20 PM (2).jpeg">
+
+<p>
+Gurneet, my beautiful Gulaboo, every time I see your smile,
+it feels like the world becomes softer and brighter. Your smile
+is not just beautiful — it is magical. It carries warmth,
+kindness, and a sweetness that melts my heart instantly.
+When you smile, it feels like sunshine touching my soul.
+</p>
+
+<p>
+And your eyes… they are the most mesmerizing part of you.
+They shine with innocence, depth, and love. When I look
+into your eyes, I see comfort, peace, and my forever.
+They speak without words and still say everything.
+</p>
+
+<p style="font-weight:bold; margin-top:15px;">
+Will you be my Valentine forever? 💍💖
+</p>
+
+</div>
+
+<div class="buttons">
+    <button class="yes" onclick="showLove()">Yes ❤️</button>
+    <button class="no" onclick="moveNo()">No 🙈</button>
+</div>
+
+<div class="popup" id="popup">
+    <div>
+        <h3>She Said YES! 💕</h3>
+        <p>
+        Gurneet, your smile is my happiness,
+        your eyes are my peace,
+        and having you in my life
+        is the biggest blessing.
+        I am the luckiest person alive
+        to love you and call you mine.
+        I Love You Forever Gulaboo ❤️
+        </p>
+    </div>
+</div>
+
+</div>
+
+<script>
+
+// Typing effect
+const text = "Gulaboo❤️";
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+typeWriter();
+
+// Yes button
+function showLove(){
+    document.getElementById("popup").style.display="flex";
+}
+
+// Funny moving No button
+function moveNo(){
+    const noBtn = document.querySelector(".no");
+    noBtn.style.position="absolute";
+    noBtn.style.top = Math.random()*500 + "px";
+    noBtn.style.left = Math.random()*250 + "px";
+}
+
+</script>
+
+</body>
+</html>
